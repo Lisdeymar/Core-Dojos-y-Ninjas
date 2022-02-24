@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Moon+Dance&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <title> Dojo con Ninjas </title>
+    </head>
+    <body>
+        <h2>
+            {{dojoConNinjas[0]['name']}} Ninjas
+        </h2>
+        <table>
+            <thead>
+                <tr class="theadtr">
+                    <th class="titulo">First Name</th>
+                    <th class="titulo">Last Name</th>
+                    <th class="titulo">Age</th>
+                </tr>
+            </thead>
+            <p>{{dojoConNinjas[0].__dict__}}</p>
+            <tbody>
+                {% for ninja in dojoConNinjas %}
+                    <tr>
+                        <td>{{ninja.first_name}}</td>
+                        <td>{{ninja['last_name']}}</td>
+                        <td>{{ninja['age']}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

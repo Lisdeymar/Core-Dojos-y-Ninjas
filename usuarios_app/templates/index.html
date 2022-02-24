@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Moon+Dance&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <title> Registro y All Dojos </title>
+    </head>
+    <body>
+        <div>
+            <h2>
+                New Dojo
+            </h2>
+            <form action="/registrodojo" method="POST">
+                <div>
+                    <label for="name">
+                        Name:
+                    </label> 
+                    <input type="text" id="name" name="name" />
+                </div>
+                <button type="submit">
+                    Create
+                </button>
+            </form>
+        </div>
+        <div>
+            <h2>
+                All Dojos
+            </h2>
+            <ul>
+                {% for dojo in listaDojos: %}
+                    <form method="GET" action="/dojos/{{dojo.id}} ">
+                        <button>
+                            {{ dojo.name }}
+                        </button>
+                    </form>
+                {% endfor %}
+            </ul>
+            <form action="/ninjas" method="GET">
+                <button type="submit">
+                    Add Ninja
+                </button>
+            </form>
+        </div>
+    </body>
+</html>
