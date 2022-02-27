@@ -10,7 +10,7 @@ def despliegaRegistroNinja():
 #Al importar la clase Dojos para poder recibir el nombre del dojo y almacenarlo con el form,
 # llamamos a la segunda funcion de obtenerListaDojos del modelo y controladorDojos, la funcion 
 # es un select lo cual permite visualizar todos los dojos registrados en la ruta 1A, hacemo uso
-# de la funcion de la caja 1B del otro archivo controladorDojos-
+# de la funcion de la caja 1B del otro archivo modeloDojos-
 
 
 #Ruta 2A POST Registrar, insertas información y click, redirecciona a ruta 2
